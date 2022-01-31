@@ -18,6 +18,6 @@ Le but du projet est de développer un générateur et un solveur de labyrinthe:
 
 axel.boudeau@ynov.com : Gère la génération des deux types de labyrinthes (perfect maze & imperfect maze).
 
-arthur.viard@ynov.com & nathan.mezou@ynov.com : Se chargent de la conception des "IA" des solveurs (A*, ?Tremaux, brutforce).
+arthur.viard@ynov.com & nathan.mezou@ynov.com : Se chargent de la conception des "IA" des solveurs (A*, ?Tremaux, ?Dijkstra, brutforce).
 
 nathan.mezou@ynov.com: Se chargent de l'édition de la base de donnée.
