@@ -12,7 +12,7 @@ Le but du projet est de développer un générateur et un solveur de labyrinthe 
 
  1. Maze génération, python || JS
  2. Maze Solver, C++ | Algorithms: A*, Dijkstra, Tremaux, BrutForce.
- 4. Bases de données.
+ 4. Bases de données, nosql.
 
 ## Rôles
 
