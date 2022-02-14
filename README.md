@@ -11,7 +11,7 @@ Links:
 Le but du projet est de développer un générateur et un solveur de labyrinthe (Parfait, imparfait) en local:
 
  1. Maze génération, python || JS
- 2. Maze Solver, C++ | Algorithms: A*, Dijkstra, Tremaux, BrutForce. (multithreading, compétition IA)
+ 2. Maze Solver, C++ || Algorithms: A*, Dijkstra, Tremaux, BrutForce. (multithreading, compétition IA)
  4. Bases de données, nosql.
 
 ## Rôles
