@@ -1,8 +1,11 @@
 ## Imports
 import random
-import time
+import sys
+from xml.etree.ElementTree import tostring
 from colorama import init
 from colorama import Fore, Back, Style
+
+fichier = open("./deposit/texte.txt",'wt');
 
 ## Functions
 def printMaze(maze):
@@ -11,11 +14,11 @@ def printMaze(maze):
 			if (maze[i][j] == 'u'):
 				print(Fore.WHITE + str(maze[i][j]), end=" ")
 			elif (maze[i][j] == '*'):
-				print(Fore.GREEN + str(maze[i][j]), end=" ")
+				fichier.write(str(maze[i][j]))
 			else:
-				print(Fore.RED + str(maze[i][j]), end=" ")
+				fichier.write(str(maze[i][j]))
 			
-		print('\n')
+		fichier.write('\n')
 
 # Find number of surrounding cells
 def surroundingCells(rand_wall):
@@ -37,8 +40,8 @@ def surroundingCells(rand_wall):
 wall = 'x'
 cell = '*'
 unvisited = 'u'
-height = 11
-width = 27
+height = 20
+width = 20
 maze = []
 
 # Initialize colorama
@@ -247,10 +250,11 @@ for i in range(0, width):
 		maze[0][0] = '*'
 		break
 
-for i in range(width-1, 0, -1):
-	if (maze[height-2][i] == '*'):
-		maze[height-1][i] = '*'
-		break
+maze[height-1][width-2] = '*'
+maze[height-1][width-1] = '*'
+
+fichier.close;
+printMaze(maze);
+
 
 # Print final maze
-printMaze(maze)
