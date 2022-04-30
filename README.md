@@ -12,7 +12,7 @@ Le but du projet est de développer un générateur et un solveur de labyrinthe 
 (Projet de base 28pts) (Fonctionalité ajouté 5pts multithreading et 8pts pour les 3 autres IAs et snapshots)
 
  1. Maze génération, python || JS || (12pts génération et édition de maze)
- 2. Maze Solver, C++ || Algorithms: A*, Dijkstra, Tremaux, BrutForce. (multithreading, compétition IA)
+ 2. Maze Solver, C || Algorithms: A*, Dijkstra, Tremaux, BrutForce. (multithreading, compétition IA)
  4. Bases de données, nosql. (4pts)
 
 ## Rôles
