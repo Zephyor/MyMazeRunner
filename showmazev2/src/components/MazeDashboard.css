@@ -1,0 +1,27 @@
+.maze-dashboard {
+    padding: 5px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - (10px*2));
+    overflow-x: scroll;
+}
+
+.container {
+    padding: 5px;
+    border: 1px solid red;
+    justify-content: center;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+  
+.card {
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: white;
+}
+
+.file-selector {
+    padding: 5px;
+    border: 1px solid red;
+}
