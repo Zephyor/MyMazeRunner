@@ -19,7 +19,7 @@ const MazeCell = (props:MazeCellProps) => {
             cellTypeStyle = 'cell-path';
             break;
         default:
-            cellTypeStyle = 'cell-unknown';
+            cellTypeStyle = '';
     }
 
     return (

@@ -13,7 +13,7 @@ const MazeMap = (props:MazeMapProps) => {
     return (
         <div className='maze-map'>
             {
-                fileLines.map((line, index) => {
+                fileLines.map((line: string, index: number) => {
                     return (
                         <div key={index} className='maze-row'>
                             {
