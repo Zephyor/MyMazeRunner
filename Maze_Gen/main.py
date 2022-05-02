@@ -1,9 +1,14 @@
 ## Imports
 import random
 import sys
+from sys import argv
 from xml.etree.ElementTree import tostring
 
 fichier = open("./deposit/default_map.txt",'wt');
+
+x = sys.argv[1]
+y = sys.argv[2]
+print(x, y)
 
 ## Functions
 def printMaze(maze):
@@ -38,8 +43,8 @@ def surroundingCells(rand_wall):
 wall = 'X'
 cell = '*'
 unvisited = 'u'
-height = 20
-width = 20
+height = int(y)
+width = int(x)
 maze = []
 
 
