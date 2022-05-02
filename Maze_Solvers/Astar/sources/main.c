@@ -7,7 +7,7 @@
 
 #include "../include/astar.h"
 
-void		my_putsterror(char *str)
+void my_putsterror(char *str)
 {
     int	i = 0;
 
@@ -21,9 +21,9 @@ static void free_map(map_t *map)
 {
     int i = 0;
 
-    while (i != map->hauteur) {
-          free(map->map[i]);
-          ++i;
+    while (i != map->hauteur - 1) {
+        free(map->map[i]);
+        ++i;
     }
 }
 
@@ -44,7 +44,6 @@ int main(int ac, char **av)
         return (-1);
     else if (rt >= 0)
         map_printer(map, rt);
-    free(map->map);
     free_map(map);
     free(node);
     return (0);

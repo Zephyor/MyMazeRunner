@@ -6,32 +6,65 @@
 */
 
 #include "../include/astar.h"
-#include <stdio.h>
 
+/*
+#include <mysql/mysql.h>
+void mysql_connect()
+{
+    MYSQL *connexion;
+    MYSQL_RES *res;
+    MYSQL_ROW row;
+
+    char *server = ADDR;
+    char *user = LOG;
+    char *password = PSW;
+    char *database = DB;
+
+    connexion = mysql_init(NULL);
+
+    if (!mysql_real_connect(connexion, server, user, password, database, 0, NULL, 0)) {
+        fprintf(stderr, "%s\n", mysql_error(connexion));
+        exit(1);
+    }
+
+    if (mysql_query(connexion, "show tables")) {
+      fprintf(stderr, "%s\n", mysql_error(connexion));
+      exit(1);
+    }
+    res = mysql_use_result(connexion);
+
+    printf("MySQL Tables in mysql database:\n");
+    while ((row = mysql_fetch_row(res)) != NULL)
+    	printf("%s \n", row[0]);
+    
+
+    mysql_free_result(res);
+    mysql_close(connexion);
+}
+*/
 
 void map_printer(map_t *map, int rt)
 {
     FILE *fptr = NULL;
-    char *path = "../../AstarSolvedMap.txt";
+    char *path = "../AstarSolvedMap.txt";
     int i = 0;
 
     fptr = fopen(path, "w");
  
-    if (fptr == NULL)
-    {
+    if (fptr == NULL) {
         printf("File does not exists \n");
         return;
     }
-    printf("Algorithm A*: %d ms\n", rt);
-    fprintf(fptr, "algoritm A*: %d ms\n", rt);
+    printf("Algorithm A* runtime: %d ms\n", rt);
     while (i != map->hauteur) {
         fprintf(fptr, "%s\n", map->map[i]);
         ++i;
     }
+    //mysql_connect();
     fclose(fptr);
 }
 
-// Check the map validity -> '*' for travel spaces && 'X' for walls. / important cast from ssize_t to int for map size check
+// Check the map validity -> '*' for travel spaces && 'X' for walls.
 static int	map_check_format(char *line, int largeur)
 {
     int	i = 0;

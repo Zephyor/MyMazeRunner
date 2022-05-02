@@ -19,7 +19,7 @@ CC		= gcc -g3
 
 RM		= rm -rf
 
-CFLAGS		= -Wall -Wextra -Iinclude
+CFLAGS		= -Wall -Wextra -Iinclude -lmysqlclient
 
 all:		$(NAME_A) $(NAME_GEN) $(NAME_ASTAR)
 

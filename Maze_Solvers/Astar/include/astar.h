@@ -15,6 +15,11 @@
 #include <stdio.h>
 #include <stddef.h>
 
+#define ADDR "localhost"
+#define LOG "root"
+#define PSW "toor"
+#define DB "maze_default"
+
 typedef struct	s_open
 {
   int		x;
@@ -38,6 +43,8 @@ typedef struct	s_map
 }		map_t;
 
 int get_min(origin_t *);
+
+//void mysql_connect();
 
 // Structure init
 open_t    *return_current(origin_t *, int);

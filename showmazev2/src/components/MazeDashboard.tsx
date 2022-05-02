@@ -22,14 +22,14 @@ const MazeDashboard = () => {
         <div className='container'>
             <div className='file-selector'>
                 <h1>Maze Runner Map</h1>
-                <p>Default map / a_star solved map / brutforce</p>
+                <p>Default map and a_star solved map</p>
             </div>
             <div className='card'>
                 <div className='file-selector'>
                     <input type='file' onChange={handleFileChange}/>
                 </div>
                 <div className="maze-dashboard">
-                    {selectedFiles.map((filename) => { 
+                    {selectedFiles.map((filename) => {
                         return <MazeMap content={filename} />;
                      })}
                 </div>
