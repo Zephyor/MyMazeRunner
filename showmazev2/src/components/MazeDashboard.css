@@ -1,6 +1,6 @@
 .maze-dashboard {
     padding: 5px;
-    border: 1px solid red;
+    border: 1px solid blue;
     display: flex;
     flex-direction: row;
     width: calc(100% - (10px*2));
@@ -9,19 +9,19 @@
 
 .container {
     padding: 5px;
-    border: 1px solid red;
+    border: 1px solid blue;
     justify-content: center;
     font-family: 'Baloo Paaji 2', cursive;
 }
-  
+
 .card {
     padding: 5px;
-    border: 1px solid red;
+    border: 1px solid blue;
     border-radius: 5px;
     color: white;
 }
 
 .file-selector {
     padding: 5px;
-    border: 1px solid red;
+    border: 1px solid blue;
 }

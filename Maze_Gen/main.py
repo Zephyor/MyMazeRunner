@@ -2,17 +2,15 @@
 import random
 import sys
 from xml.etree.ElementTree import tostring
-from colorama import init
-from colorama import Fore, Back, Style
 
-fichier = open("./deposit/texte.txt",'wt');
+fichier = open("./deposit/default_map.txt",'wt');
 
 ## Functions
 def printMaze(maze):
 	for i in range(0, height):
 		for j in range(0, width):
 			if (maze[i][j] == 'u'):
-				print(Fore.WHITE + str(maze[i][j]), end=" ")
+				print(str(maze[i][j]), end=" ")
 			elif (maze[i][j] == '*'):
 				fichier.write(str(maze[i][j]))
 			else:
@@ -37,15 +35,13 @@ def surroundingCells(rand_wall):
 
 ## Main code
 # Init variables
-wall = 'x'
+wall = 'X'
 cell = '*'
 unvisited = 'u'
 height = 20
 width = 20
 maze = []
 
-# Initialize colorama
-init()
 
 # Denote all cells as unvisited
 for i in range(0, height):
@@ -75,10 +71,10 @@ walls.append([starting_height, starting_width + 1])
 walls.append([starting_height + 1, starting_width])
 
 # Denote walls in maze
-maze[starting_height-1][starting_width] = 'x'
-maze[starting_height][starting_width - 1] = 'x'
-maze[starting_height][starting_width + 1] = 'x'
-maze[starting_height + 1][starting_width] = 'x'
+maze[starting_height-1][starting_width] = 'X'
+maze[starting_height][starting_width - 1] = 'X'
+maze[starting_height][starting_width + 1] = 'X'
+maze[starting_height + 1][starting_width] = 'X'
 
 while (walls):
 	# Pick a random wall
@@ -98,7 +94,7 @@ while (walls):
 				# Upper cell
 				if (rand_wall[0] != 0):
 					if (maze[rand_wall[0]-1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]-1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]-1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]-1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]-1, rand_wall[1]])
 
@@ -106,14 +102,14 @@ while (walls):
 				# Bottom cell
 				if (rand_wall[0] != height-1):
 					if (maze[rand_wall[0]+1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]+1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]+1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]+1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]+1, rand_wall[1]])
 
 				# Leftmost cell
 				if (rand_wall[1] != 0):	
 					if (maze[rand_wall[0]][rand_wall[1]-1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]-1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]-1] = 'X'
 					if ([rand_wall[0], rand_wall[1]-1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]-1])
 			
@@ -138,21 +134,21 @@ while (walls):
 				# Upper cell
 				if (rand_wall[0] != 0):
 					if (maze[rand_wall[0]-1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]-1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]-1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]-1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]-1, rand_wall[1]])
 
 				# Leftmost cell
 				if (rand_wall[1] != 0):
 					if (maze[rand_wall[0]][rand_wall[1]-1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]-1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]-1] = 'X'
 					if ([rand_wall[0], rand_wall[1]-1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]-1])
 
 				# Rightmost cell
 				if (rand_wall[1] != width-1):
 					if (maze[rand_wall[0]][rand_wall[1]+1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]+1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]+1] = 'X'
 					if ([rand_wall[0], rand_wall[1]+1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]+1])
 
@@ -175,17 +171,17 @@ while (walls):
 				# Mark the new walls
 				if (rand_wall[0] != height-1):
 					if (maze[rand_wall[0]+1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]+1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]+1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]+1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]+1, rand_wall[1]])
 				if (rand_wall[1] != 0):
 					if (maze[rand_wall[0]][rand_wall[1]-1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]-1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]-1] = 'X'
 					if ([rand_wall[0], rand_wall[1]-1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]-1])
 				if (rand_wall[1] != width-1):
 					if (maze[rand_wall[0]][rand_wall[1]+1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]+1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]+1] = 'X'
 					if ([rand_wall[0], rand_wall[1]+1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]+1])
 
@@ -209,17 +205,17 @@ while (walls):
 				# Mark the new walls
 				if (rand_wall[1] != width-1):
 					if (maze[rand_wall[0]][rand_wall[1]+1] != '*'):
-						maze[rand_wall[0]][rand_wall[1]+1] = 'x'
+						maze[rand_wall[0]][rand_wall[1]+1] = 'X'
 					if ([rand_wall[0], rand_wall[1]+1] not in walls):
 						walls.append([rand_wall[0], rand_wall[1]+1])
 				if (rand_wall[0] != height-1):
 					if (maze[rand_wall[0]+1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]+1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]+1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]+1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]+1, rand_wall[1]])
 				if (rand_wall[0] != 0):	
 					if (maze[rand_wall[0]-1][rand_wall[1]] != '*'):
-						maze[rand_wall[0]-1][rand_wall[1]] = 'x'
+						maze[rand_wall[0]-1][rand_wall[1]] = 'X'
 					if ([rand_wall[0]-1, rand_wall[1]] not in walls):
 						walls.append([rand_wall[0]-1, rand_wall[1]])
 
@@ -241,9 +237,9 @@ while (walls):
 for i in range(0, height):
 	for j in range(0, width):
 		if (maze[i][j] == 'u'):
-			maze[i][j] = 'x'
+			maze[i][j] = 'X'
 
-# Set entrance and exit
+# Set entrance and eXit
 for i in range(0, width):
 	if (maze[1][i] == '*'):
 		maze[0][i] = '*'

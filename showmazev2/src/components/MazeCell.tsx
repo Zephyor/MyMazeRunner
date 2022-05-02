@@ -24,7 +24,7 @@ const MazeCell = (props:MazeCellProps) => {
 
     return (
         <div className={`maze-cell ${cellTypeStyle}`}>
-
+            
         </div>
     );
 }

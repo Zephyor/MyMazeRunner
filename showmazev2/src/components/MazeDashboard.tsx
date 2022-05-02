@@ -9,10 +9,8 @@ const MazeDashboard = () => {
  
     const handleFileChange = (event: any) => {
         const file = event.target.files[0];
-        console.log(event.target.files);
         const reader = new FileReader();
         reader.onload = ((evt: ProgressEvent<FileReader>) => {
-            console.log(evt.target?.result);
             if (evt.target?.result !== null) {
                 setSelectedFiles([...selectedFiles, evt.target?.result as string]);
             }
@@ -22,7 +20,11 @@ const MazeDashboard = () => {
 
     return (
         <div className='container'>
-            <div className='card'>   
+            <div className='file-selector'>
+                <h1>Maze Runner Map</h1>
+                <p>Default map / a_star solved map / brutforce</p>
+            </div>
+            <div className='card'>
                 <div className='file-selector'>
                     <input type='file' onChange={handleFileChange}/>
                 </div>
