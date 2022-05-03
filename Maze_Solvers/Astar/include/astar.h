@@ -27,7 +27,7 @@ typedef struct	s_open
   int		h_cost;
   int		closed;
   struct s_open	*next;
-  struct s_open	*parent;
+  struct s_open	*prev;
 }		open_t;
 
 typedef struct	s_origin

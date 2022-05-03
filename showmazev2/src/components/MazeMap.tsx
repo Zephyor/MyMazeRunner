@@ -9,7 +9,7 @@ interface MazeMapProps {
 const MazeMap = (props:MazeMapProps) => {
     const fileContent:string = props.content;
     const fileLines:string[] = fileContent.split(/\r?\n/);
-
+    
     return (
         <div className='maze-map'>
             {

@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include "../include/astar.h"
 
-// set le voisin 
 int add_neighbor_in_open(origin_t *node, open_t *neighbor)
 {
     if (node != NULL) {
@@ -37,17 +36,18 @@ int count_cells(origin_t *node)
 
 origin_t *init_origin(map_t *map)
 {
-    origin_t	*f;
-    open_t	*open;
+    origin_t *node;
+    open_t *open;
 
-    if ((f = malloc(sizeof(origin_t))) == NULL || (open = malloc(sizeof(open_t))) == NULL)
+    if ((node = malloc(sizeof(origin_t))) == NULL ||
+        (open = malloc(sizeof(open_t))) == NULL)
         return (NULL);
     open->x = 0;
     open->y = 0;
     open->h_cost = (map->largeur - 1) * 10 + (map->hauteur - 1) * 10;
     open->closed = 0;
     open->next = NULL;
-    open->parent = NULL;
-    f->origin = open;
-    return (f);
+    open->prev = NULL;
+    node->origin = open;
+    return (node);
 }

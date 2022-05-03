@@ -48,7 +48,7 @@ origin_t *close_current_from_open(origin_t *node, open_t *current)
     while (tmp != NULL) {
         if (tmp->x == current->x && tmp->y == current->y) {
             tmp->closed = 1;
-        return (node);
+            return (node);
         }
         tmp = tmp->next;
     }

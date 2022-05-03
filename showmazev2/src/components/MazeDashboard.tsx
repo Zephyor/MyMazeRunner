@@ -6,7 +6,8 @@ import MazeMap from './MazeMap';
 const MazeDashboard = () => {
     
     const [selectedFiles, setSelectedFiles] = useState<string[]>([]);
- 
+    
+    // recupere le contenu de la map
     const handleFileChange = (event: any) => {
         const file = event.target.files[0];
         const reader = new FileReader();
